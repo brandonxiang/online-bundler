@@ -6,7 +6,7 @@ jobs:
   pages:
     runs-on: ubuntu-18.04
     steps:
-            - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v2.1.2
