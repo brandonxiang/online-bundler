@@ -1,7 +1,8 @@
 <script type="ts">
 	import CodeInput from './components/CodeInput.svelte';
 	import CodeOutput from './components/CodeOutput.svelte';
-	import { parseExpressionAt, x, print } from 'code-red';
+	import { getExports } from './utils/parse';
+	import { parse, x, print } from 'code-red';
 
 	let result = ''
 
@@ -12,14 +13,14 @@
 	$: {
 		try {
 
-			const expression1 = parseExpressionAt(text1, 0, {});
-			const expression2 = parseExpressionAt(text2, 0, {});
-			console.log("expression1", expression1, "expression2", expression2);
+			const code1 = parse(text1, {});
+			const code2 = parse(text2, {});
 
-			if(expression1.type === 'AssignmentExpression' && expression2.type === 'AssignmentExpression') {
-				const exp = x`window.__pager_func = {onMount: ${expression1.right}, onUnmount: ${expression2.right}}`
-				result = print(exp).code
-			}
+			const expression1 = getExports(code1);
+			const expression2 = getExports(code2);
+
+			const exp = x`window.__pager_func = {onMount: ${expression1.right}, onUnmount: ${expression2.right}}`
+			result = print(exp).code
 		} catch (e) {
 			console.error(e)
 		}
