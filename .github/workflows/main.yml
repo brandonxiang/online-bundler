@@ -1,0 +1,13 @@
+name: github-pages
+
+on: push
+
+jobs:
+  pages:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
