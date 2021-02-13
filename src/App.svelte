@@ -1,6 +1,5 @@
 <script type="ts">
-	import CodeInput from './components/CodeInput.svelte';
-	import CodeOutput from './components/CodeOutput.svelte';
+	import CodeMirror from './components/CodeMirror/index.svelte';
 	import { getExports } from './utils/parse';
 	import { parse, x, print } from 'code-red';
 
@@ -9,6 +8,8 @@
 	let text1 = `module.exports = (a,b) => { return a+b; }`;
 
 	let text2 = `module.exports = (a,b) => { return a-b; }`;
+
+	let resultEditor; 
 
 	$: {
 		try {
@@ -21,6 +22,11 @@
 
 			const exp = x`window.__pager_func = {onMount: ${expression1.right}, onUnmount: ${expression2.right}}`
 			result = print(exp).code
+
+			if(resultEditor ) {
+				resultEditor.updateValue(result)
+			}
+
 		} catch (e) {
 			console.error(e)
 		}
@@ -30,11 +36,11 @@
 
 <main>
 	<div class="left">
-		<CodeInput bind:value={text1} />
-		<CodeInput bind:value={text2} />
+		<CodeMirror bind:value={text1} height={400}/>
+		<CodeMirror bind:value={text2} height={400}/>
 	</div>
   <div class="right">
-		<CodeOutput bind:value={result} />
+		<CodeMirror bind:this={resultEditor} value={result} readonly={true} height={810}/>
 	</div>
 </main>
 
@@ -44,7 +50,6 @@
 	}
 
 	main {
-		text-align: center;
 		padding: 1em;
 		margin: 0 auto;
 		display: flex;

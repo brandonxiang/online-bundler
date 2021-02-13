@@ -1,15 +1,22 @@
 dependencies:
   code-red: 0.1.4
+  codemirror: 5.59.2
   sirv-cli: 1.0.11
 devDependencies:
   '@rollup/plugin-commonjs': 17.1.0_rollup@2.38.5
   '@rollup/plugin-node-resolve': 11.1.1_rollup@2.38.5
+  '@rollup/plugin-typescript': 6.1.0_0ffe5a4b1b8abe17471368eaa78cd1ad
+  '@tsconfig/svelte': 1.0.10
   rollup: 2.38.5
   rollup-plugin-css-only: 3.1.0_rollup@2.38.5
   rollup-plugin-livereload: 2.0.0
   rollup-plugin-svelte: 7.1.0_rollup@2.38.5+svelte@3.32.1
   rollup-plugin-terser: 7.0.2_rollup@2.38.5
   svelte: 3.32.1
+  svelte-check: 1.1.34_svelte@3.32.1
+  svelte-preprocess: 4.6.8_svelte@3.32.1+typescript@3.9.9
+  tslib: 2.1.0
+  typescript: 3.9.9
 lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.12.13:
@@ -67,6 +74,23 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-zlBXR4eRS+2m79TsUZWhsd0slrHUYdRx4JF+aVQm+MI0wsKdlpC2vlDVjmlGvtZY1vsefOT9w3JxvmWSBei+Lg==
+  /@rollup/plugin-typescript/6.1.0_0ffe5a4b1b8abe17471368eaa78cd1ad:
+    dependencies:
+      '@rollup/pluginutils': 3.1.0_rollup@2.38.5
+      resolve: 1.19.0
+      rollup: 2.38.5
+      tslib: 2.1.0
+      typescript: 3.9.9
+    dev: true
+    engines:
+      node: '>=8.0.0'
+    peerDependencies:
+      rollup: ^2.14.0
+      tslib: '*'
+      typescript: '>=3.4.0'
+    resolution:
+      integrity: sha1-KJ5/DqEv1lm9E61Z3ac7kFVTi4M=
+      tarball: '@rollup/plugin-typescript/download/@rollup/plugin-typescript-6.1.0.tgz'
   /@rollup/pluginutils/3.1.0_rollup@2.38.5:
     dependencies:
       '@types/estree': 0.0.39
@@ -92,6 +116,11 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-TrBhfJkFxA+ER+ew2U2/fHbebhLT/l/2pRk0hfj9KusXUuRXd2v0R58AfaZK9VXDQ4TogOSEmICVrQAA3zFnHQ==
+  /@tsconfig/svelte/1.0.10:
+    dev: true
+    resolution:
+      integrity: sha1-MOx/7u4L3zixKlDwaG+KLntrncA=
+      tarball: '@tsconfig/svelte/download/@tsconfig/svelte-1.0.10.tgz'
   /@types/estree/0.0.39:
     dev: true
     resolution:
@@ -103,12 +132,24 @@ packages:
     dev: true
     resolution:
       integrity: sha512-EPpXLOVqDvisVxtlbvzfyqSsFeQxltFbluZNRndIb8tr9KiBnYNLzrc1N3pyKUCww2RNrfHDViqDWWE1LCJQtQ==
+  /@types/pug/2.0.4:
+    dev: true
+    resolution:
+      integrity: sha1-h3L80EGOPNLMFxVV1zAHQVBR9LI=
+      tarball: '@types/pug/download/@types/pug-2.0.4.tgz'
   /@types/resolve/1.17.1:
     dependencies:
       '@types/node': 14.14.25
     dev: true
     resolution:
       integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==
+  /@types/sass/1.16.0:
+    dependencies:
+      '@types/node': 14.14.25
+    dev: true
+    resolution:
+      integrity: sha1-tBrBwX+mj/tX1D4jYEhu9Saz1X0=
+      tarball: '@types/sass/download/@types/sass-1.16.0.tgz'
   /acorn/7.4.1:
     dev: false
     engines:
@@ -124,6 +165,15 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==
+  /ansi-styles/4.3.0:
+    dependencies:
+      color-convert: 2.0.1
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha1-7dgDYornHATIWuegkG7a00tkiTc=
+      tarball: ansi-styles/download/ansi-styles-4.3.0.tgz
   /anymatch/3.1.1:
     dependencies:
       normalize-path: 3.0.0
@@ -172,6 +222,13 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-lGzLKcioL90C7wMczpkY0n/oART3MbBa8R9OFGE1rJxoVI86u4WAGfEk8Wjv10eKSyTHVGkSo3bvBylCEtk7LA==
+  /callsites/3.1.0:
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha1-s2MKvYlDQy9Us/BRkjjjPNffL3M=
+      tarball: callsites/download/callsites-3.1.0.tgz
   /chalk/2.4.2:
     dependencies:
       ansi-styles: 3.2.1
@@ -182,6 +239,16 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
+  /chalk/4.1.0:
+    dependencies:
+      ansi-styles: 4.3.0
+      supports-color: 7.2.0
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha1-ThSHCmGNni7dl92DRf2dncMVZGo=
+      tarball: chalk/download/chalk-4.1.0.tgz
   /chokidar/3.5.1:
     dependencies:
       anymatch: 3.1.1
@@ -207,16 +274,35 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NPiLFd1EfonYONCNXCH1oVirQMXk5oAOQ3FanRbjB4HZ09rTU/lZGKjVOOP0FKr4pccGVYE5I4CqtyU6ens2VA==
+  /codemirror/5.59.2:
+    dev: false
+    resolution:
+      integrity: sha1-7mdNOkqNJBrzjVKvxIJiW6c5OSI=
+      tarball: codemirror/download/codemirror-5.59.2.tgz
   /color-convert/1.9.3:
     dependencies:
       color-name: 1.1.3
     dev: true
     resolution:
       integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==
+  /color-convert/2.0.1:
+    dependencies:
+      color-name: 1.1.4
+    dev: true
+    engines:
+      node: '>=7.0.0'
+    resolution:
+      integrity: sha1-ctOmjVmMm9s68q0ehPIdiWq9TeM=
+      tarball: color-convert/download/color-convert-2.0.1.tgz
   /color-name/1.1.3:
     dev: true
     resolution:
       integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
+  /color-name/1.1.4:
+    dev: true
+    resolution:
+      integrity: sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=
+      tarball: color-name/download/color-name-1.1.4.tgz
   /commander/2.20.3:
     dev: true
     resolution:
@@ -241,6 +327,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
+  /detect-indent/6.0.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha1-Cr0PVJ9p/GZZolT+lnhhhrb1KP0=
+      tarball: detect-indent/download/detect-indent-6.0.0.tgz
   /escape-string-regexp/1.0.5:
     dev: true
     engines:
@@ -328,6 +421,16 @@ packages:
       node: '>= 0.4.0'
     resolution:
       integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
+  /import-fresh/3.3.0:
+    dependencies:
+      parent-module: 1.0.1
+      resolve-from: 4.0.0
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha1-NxYsJfy566oublPVtNiM4X2eDCs=
+      tarball: import-fresh/download/import-fresh-3.3.0.tgz
   /inflight/1.0.6:
     dependencies:
       once: 1.4.0
@@ -441,12 +544,24 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-ft3WayFSFUVBuJj7BMLKAQcSlItKtfjsKDDsii3rqFDAZ7t11zRe8ASw/GlmivGwVUYtwkQrxiGGpL6gFvB0ag==
+  /min-indent/1.0.1:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-pj9oFnOzBXH76LwlaGrnRu76mGk=
+      tarball: min-indent/download/min-indent-1.0.1.tgz
   /minimatch/3.0.4:
     dependencies:
       brace-expansion: 1.1.11
     dev: true
     resolution:
       integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
+  /minimist/1.2.5:
+    dev: true
+    resolution:
+      integrity: sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
+      tarball: minimist/download/minimist-1.2.5.tgz
   /mri/1.1.6:
     dev: false
     engines:
@@ -469,6 +584,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-k41FwbcLnlgnFh69f4qdUfvDQ+5vaSDnVPFI/y5XuhKRq97EnVVneO9F1ESVCdiVu4fCS2L8usX3mU331hB7pg==
+  /parent-module/1.0.1:
+    dependencies:
+      callsites: 3.1.0
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha1-aR0nCeeMefrjoVZiJFLQB2LKqqI=
+      tarball: parent-module/download/parent-module-1.0.1.tgz
   /path-is-absolute/1.0.1:
     dev: true
     engines:
@@ -510,6 +634,13 @@ packages:
     dev: true
     resolution:
       integrity: sha1-eZlTn8ngR6N5KPoZb44VY9q9Nt4=
+  /resolve-from/4.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-SrzYUq0y3Xuqv+m0DgCjbbXzkuY=
+      tarball: resolve-from/download/resolve-from-4.0.0.tgz
   /resolve/1.19.0:
     dependencies:
       is-core-module: 2.2.0
@@ -649,6 +780,15 @@ packages:
   /sourcemap-codec/1.4.8:
     resolution:
       integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
+  /strip-indent/3.0.0:
+    dependencies:
+      min-indent: 1.0.1
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha1-wy4c7pQLazQyx3G8LFS8znPNMAE=
+      tarball: strip-indent/download/strip-indent-3.0.0.tgz
   /supports-color/5.5.0:
     dependencies:
       has-flag: 3.0.0
@@ -665,6 +805,75 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
+  /svelte-check/1.1.34_svelte@3.32.1:
+    dependencies:
+      chalk: 4.1.0
+      chokidar: 3.5.1
+      glob: 7.1.6
+      import-fresh: 3.3.0
+      minimist: 1.2.5
+      source-map: 0.7.3
+      svelte: 3.32.1
+      svelte-preprocess: 4.6.8_svelte@3.32.1+typescript@3.9.9
+      typescript: 3.9.9
+    dev: true
+    hasBin: true
+    peerDependencies:
+      svelte: ^3.24.0
+    resolution:
+      integrity: sha1-PZnT3EgnjRNQnyI7KHVojV3UixE=
+      tarball: svelte-check/download/svelte-check-1.1.34.tgz
+  /svelte-preprocess/4.6.8_svelte@3.32.1+typescript@3.9.9:
+    dependencies:
+      '@types/pug': 2.0.4
+      '@types/sass': 1.16.0
+      detect-indent: 6.0.0
+      strip-indent: 3.0.0
+      svelte: 3.32.1
+      typescript: 3.9.9
+    dev: true
+    engines:
+      node: '>= 10.x'
+    peerDependencies:
+      '@babel/core': ^7.10.2
+      coffeescript: ^2.5.1
+      less: ^3.11.3
+      node-sass: '*'
+      postcss: ^7 || ^8
+      postcss-load-config: ^2.1.0 || ^3.0.0
+      pug: ^3.0.0
+      sass: ^1.26.8
+      stylus: ^0.54.7
+      sugarss: ^2.0.0
+      svelte: ^3.23.0
+      typescript: ^3.9.5 || ^4.0.0
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      coffeescript:
+        optional: true
+      less:
+        optional: true
+      node-sass:
+        optional: true
+      postcss:
+        optional: true
+      postcss-load-config:
+        optional: true
+      pug:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      typescript:
+        optional: true
+    requiresBuild: true
+    resolution:
+      integrity: sha1-utijoaAxY/OUHw3CZLZKQMRKeuA=
+      tarball: svelte-preprocess/download/svelte-preprocess-4.6.8.tgz
   /svelte/3.32.1:
     dev: true
     engines:
@@ -702,6 +911,19 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==
+  /tslib/2.1.0:
+    dev: true
+    resolution:
+      integrity: sha1-2mCGDxwuyqVwOrfTm8Bba/mIuXo=
+      tarball: tslib/download/tslib-2.1.0.tgz
+  /typescript/3.9.9:
+    dev: true
+    engines:
+      node: '>=4.2.0'
+    hasBin: true
+    resolution:
+      integrity: sha1-5pkFxUvAaB0FGL1NWHzG8tCxpnQ=
+      tarball: typescript/download/typescript-3.9.9.tgz?cache=0&sync_timestamp=1613200839079&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-3.9.9.tgz
   /wrappy/1.0.2:
     dev: true
     resolution:
@@ -715,7 +937,10 @@ packages:
 specifiers:
   '@rollup/plugin-commonjs': ^17.0.0
   '@rollup/plugin-node-resolve': ^11.0.0
+  '@rollup/plugin-typescript': ^6.0.0
+  '@tsconfig/svelte': ^1.0.0
   code-red: ^0.1.4
+  codemirror: ^5.59.2
   rollup: ^2.3.4
   rollup-plugin-css-only: ^3.1.0
   rollup-plugin-livereload: ^2.0.0
@@ -723,3 +948,7 @@ specifiers:
   rollup-plugin-terser: ^7.0.0
   sirv-cli: ^1.0.0
   svelte: ^3.0.0
+  svelte-check: ^1.0.0
+  svelte-preprocess: ^4.0.0
+  tslib: ^2.0.0
+  typescript: ^3.9.3
