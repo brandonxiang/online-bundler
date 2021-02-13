@@ -10,7 +10,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
-    "@sveltejs/eslint-config": "github:sveltejs/eslint-config",
+    "@beyonk/eslint-config": "^5.0.2",
     "eslint": "^7.20.0",
     "eslint-plugin-svelte3": "^2.7.3",
     "prettier": "^2.2.1",

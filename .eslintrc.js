@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@sveltejs'],
+  extends: ['@beyonk'],
   parserOptions: {
     ecmaVersion: 2019,
     sourceType: 'module'
